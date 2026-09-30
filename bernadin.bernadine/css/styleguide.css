@@ -1,0 +1,83 @@
+/* CSS RESET */
+
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+:root {
+	color-neutral-light:#eee;
+	color-neutral-medium: #999;
+	color-neutral-dark: #555;
+
+	color-black:#000;
+	color-white:#fff;
+
+	header-height: 5rem;
+	spacing: 2rem;
+}
+
+body {
+	margin:0;
+	font-size:100%;
+	font-family: Helvetica, Arial, sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4, {
+	font-family: "Times New Roman", serif;
+}
+
+a {
+	color:inherit;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a: hover {
+	text-decoration: underline;
+}
+
+
+
+.container{
+	max-width:1100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+
+.display-flex { display:flex; }
+.display-inline-flex { display:inline-flex; }
+.display-block { display:block; }
+.display-inline-block { display:inline-block; }
+
+
+.flex-stretch { flex: 1 1 auto; }
+.flex-none { flex: none; }
+
+.flex-align-center { align-items:center; }
+.flex-justify-center {justify-content:center; }
+
+
+
+
+.nav ul {
+	list-style-type: none;
+	margin-top:0;
+	margin-bottom: 0;
+	padding-left: 0;
+
+}
+
+.navbar{
+	background-color:var(--color-neutral-dark);
+	color:var(--color-white);
+	line-height: var(--header-height);
+}
+
+

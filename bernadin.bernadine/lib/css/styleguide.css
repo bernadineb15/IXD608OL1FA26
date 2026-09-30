@@ -1,0 +1,169 @@
+/* CSS RESET */
+
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+:root {
+    --color-neutral-light: #eee;
+    --color-neutral-medium: #999;
+    --color-neutral-dark: #2B3D38;
+
+	--color-main-light: #F7BCDD;
+    --color-main-medium: #F7BCDD;
+    --color-main-dark: #F7BCDD;
+
+    --color-black: #000;
+    --color-white: #fff;
+
+    --header-height: 2rem;
+    --spacing: 2rem;
+}
+
+body {
+	background-color:#FAF1EB;
+	margin:0;
+	font-size:100%;
+	font-family: Helvetica, Arial, sans-serif;
+
+}
+
+h1,{
+	font-family: Times New Roman;
+}
+h2,
+h3,
+h4, {
+	font-family: "Georgia Pro", serif;
+}
+
+a {
+	color:inherit;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a: hover {
+	text-decoration: underline;
+}
+
+
+
+.container{
+	max-width:700px;
+	margin-right: auto;
+	margin-left: auto;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.03);
+}
+
+
+
+.display-flex { display:flex; }
+.display-inline-flex { display:inline-flex; }
+.display-block { display:block; }
+.display-inline-block { display:inline-block; }
+
+
+.flex-stretch { flex: 1 1 auto; }
+.flex-none { flex: none; }
+
+.flex-align-center { align-items:center; }
+.flex-justify-center {justify-content:center; }
+
+
+
+
+.nav ul {
+	list-style-type: none;
+	margin-top:0;
+	margin-bottom: 0;
+	padding-left: 2;
+	gap: 2rem;
+
+}
+
+	.nav a {
+		display:block;
+		padding:0.2em 0.5em;
+	}
+
+	.nav a:hover {
+		background-color: var(--color-main-medium);
+		color: var(--color-white);
+		text-decoration: none;
+	}
+
+.nav-stretch ul,
+.nav-flex ul {
+	display:flex;
+}
+
+.nav-stretch li{
+	flex: 1 1 auto;
+	text-align:center;
+}
+
+.nav-pills a{
+	border-radius: 2em;
+	padding: 0.5em 1em;
+}
+
+
+.navbar{
+	background-color:var(--color-neutral-dark);
+	color:var(--color-white);
+	line-height: var(--header-height);
+}
+
+.card {
+    background-color: var(--color-white);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.card.soft {
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card.hard {
+    border-radius: 0.2em;
+    border: 2px solid var(--color-neutral-medium);
+}
+
+.card.dark {
+    background-color: var(--color-neutral-dark);
+    color: var(--color-neutral-light);
+}
+
+.card.medium {
+    background-color: var(--color-neutral-medium);
+}
+
+.card.flat {
+	padding:0;
+}
+
+.figure{
+	margin:0;
+	background-color: var(--color-white);
+}
+.figure img{
+	width:50%;
+	vertical-align: text-bottom;
+}
+.figure figcaption {
+	padding:1em;
+}
