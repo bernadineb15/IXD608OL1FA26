@@ -15,19 +15,30 @@ body {
 }
 
 
-
-.favorite label{
-    transition: all 0.3s;
-    display:inline-block;
-    transform: scale(1,1);
-    color:var(--color-main-medium);
+.favorite label {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--color-neutral-dark);
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
+.favorite input:checked + label {
+    color: #F7BCDD;
+    transform: scale(1.4);
+}
+.favorite input:checked + label {
+    color: #F7BCDD;
+}
 
-.favorite input:checked + label{
-    color:yellowgreen;
-    transform: scale(1.6,1.6);
+.favorite input:checked + label {
+    font-size: 0;
+}
 
+.favorite input:checked + label::after {
+    content: "★";
+    font-size: 2rem;
+    color: #F7BCDD;
 }
 
 @media (max-width: 800px) {
@@ -50,3 +61,5 @@ body {
         line-height: 2em;
     }
 }
+
+

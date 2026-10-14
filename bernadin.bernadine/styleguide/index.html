@@ -47,7 +47,7 @@
 				<li><a href="#navigations"> Navigations</a></li>
 				<li><a href="#gridsystem"> Grid System</a></li>
 				<li><a href="#flexsystem"> Flex System</a></li>
-				<li><a href="#forms"> Forms</a></li>
+				<li><a href="#form"> Forms</a></li>
 				<ul>
 					<li><a href="#inputs">Inputs</a></li>
 					<li><a href="#labels">Labels</a></li>
@@ -88,22 +88,22 @@
 		<h2>Cards</h2>
 
 		<div class="grid gap">
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 				<div class="card">Card</div>
 			</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 				<div class="card soft">Card Soft</div>
 			</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 				<div class="card hard">Card Hard</div>
 			</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 				<div class="card flat">Card Flat</div>
 			</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 				<div class="card dark">Card Dark</div>
 			</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 				<div class="card medium">Card Medium</div>
 			</div>
 		</div>
@@ -125,7 +125,7 @@
 					<nav class="${classes}">
 						<ul>
 						${links.reduce((r,o,i)=>{
-							return r+`<li class="${ran==i?'active':''}><a href="#">${o}</a></li>`;
+							return r+`<li class="${ran==i?'active':''}"><a href="#">${o}</a></li>`;
 						},'')}
 
 						</ul>
@@ -251,19 +251,19 @@
 
 	<h3>Figure Grid</h3>
 	<div class="grid gap">
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 			<figure class="figure">
 					<img src="../img/invitation.jpg"alt= "">
 				<figcaption>Custom Invitation</figcaption>
 			</figure>
 		</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 			<figure class="figure">
 				<img src="../img/invitation.jpg"alt= "">
 			<figcaption>Custom Invitation</figcaption>
 			</figure>
 		</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 			<figure class="figure">
 				<img src="../img/invitation.jpg"alt= "">
 			<figcaption>Custom Invitation</figcaption>
@@ -275,7 +275,7 @@
 
 	<div class="grid gap">
 
-		<div class="col-xs-12 col-md-4">
+		<div class="col-4">
 			<div class="card soft">
 			<figure class="figure">
 					<img src="../img/invitation.jpg"alt= "">
@@ -286,7 +286,7 @@
 			</figure>
 			</div>
 		</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 				<div class="card soft">
 				<figure class="figure">
 				<img src="../img/invitation.jpg"alt= "">
@@ -297,7 +297,7 @@
 			</figure>
 		</div>
 		</div>
-			<div class="col-xs-12 col-md-4">
+			<div class="col-4">
 			<div class="card soft">
 			<figure class="figure">
 				<img src="../img/invitation.jpg"alt= "">
@@ -313,14 +313,14 @@
 
 
 
-	<div class="container" id="forms">
+	<div class="container" id="form">
 		<h2>Forms</h2>
 
 		<h3>Inputs</h3>
 
 		<div class="card soft">
 			<h3>Default Inputs</h3>
-			<forms>
+			<form>
 			 <input type="text"><br>
 			 <input type="number"><br>
 			 <input type="password"><br>
@@ -330,7 +330,7 @@
 			 <input type="date"><br>
 			 <input type="search"><br>
 			 
-			</forms>
+			</form>
 
 			<h3>Form Input</h3>
 			<form>
@@ -390,7 +390,7 @@
 				<input type="button" class="form-button" value="Input">
 			</div>
 			<div class="form-control">
-				<a href="a" class="form-button">Anchor</a>
+				<a href="#" class="form-button">Anchor</a>
 			</div>
 		</div>
 
@@ -422,7 +422,8 @@
 
 			<div class="card soft">
 				<div class="form-select">
-				<select>
+					<label for="invitation-count"> Choose Quantity:</label>
+				<select id="invitation-count">
 					<option>1</option>
 					<option>2</option>
 					<option>3</option>

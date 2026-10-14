@@ -391,7 +391,7 @@ a:hover {
 }
 
 .toggle label {
-	font-size:3em;
+	font-size:2.5em;
 	display: inline-block;
 	width: 2em;
 	height: 1em;
@@ -399,6 +399,7 @@ a:hover {
 	background-color: var(--color-white);
 	border-radius: 0.5em;
 	position: relative;
+	transition: background-color 0.25s ease;
 	
 }
 
@@ -417,5 +418,5 @@ a:hover {
 
 .toggle input:checked + label::after {
 	transform: translateX(1em);
-	background-color: var(--color-main-light);
+	background-color: #F7BCDD;
 }

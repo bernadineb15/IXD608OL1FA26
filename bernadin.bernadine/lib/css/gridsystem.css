@@ -9,8 +9,8 @@
 }
 
 .grid.gap {
-	--grid-gap:1em;
-	grid-gap:var(--grid-gap;
+	--grid-gap: 1em;
+	grid-gap:var(--grid-gap);
 	gap:var(--grid-gap);
 }
 
@@ -35,3 +35,8 @@
 .col-10 {grid-column: span 10; }
 .col-11 {grid-column: span 11; }
 .col-12{grid-column: span 12; }
+
+#navigations .nav li.active > a {
+    background-color: #C2BF7A;
+    color: #2B3D38;
+}
