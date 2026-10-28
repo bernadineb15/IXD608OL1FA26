@@ -8,9 +8,10 @@
 			<div class="flex-stretch"></div>
 			<nav class="nav nav-flex flex-none">
 				<ul>
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="product_list.php">Store</a></li>
+					<li><a href="cart.php">Cart</a></li>
+					<li><a href="about.php">About Us</a></li>
 				</ul>
 
 			</nav>

@@ -15,6 +15,7 @@
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 	<body>
+
 		<?php include "parts/navbar.php"; ?>
 
 	<main>
@@ -40,4 +41,4 @@
 	</main>
 
 	</body>
-</head>
+</html>

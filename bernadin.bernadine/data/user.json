@@ -1,0 +1,33 @@
+[
+	{
+		"name":"Bernadine Bernadin",
+		"type":"admin",
+		"email":"bbernadi2@art.edu",
+		"hobbies":["crochet","reading","writing"]
+	},
+	{
+		"name":"Ashley Johnson",
+		"type":"user",
+		"email":"ajohnson@art.edu",
+		"hobbies":["skating","reading","writing"]
+	},
+	{
+		"name":"Michael Brown",
+		"type":"user",
+		"email":"mbrown@art.edu",
+		"hobbies":["movie watching","reading","cooking"]
+	},
+	{
+		"name":"Taylor Williams",
+		"type":"store manager",
+		"email":"twilliams@art.edu",
+		"hobbies":["building legos","reading","video games"]
+	},
+	{
+		"name":"Samantha Miller",
+		"type":"assistant",
+		"email":"smiller@art.edu",
+		"hobbies":["knitting","drawing","writing"]
+	}
+
+]
