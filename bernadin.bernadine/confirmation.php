@@ -5,6 +5,11 @@
 	<title>Confirmation</title>
 
 	<?php include "parts/meta.php"; ?>
+
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Luckiest+Guy&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Luckiest+Guy&family=Satisfy&family=Tangerine:wght@400;700&display=swap');
+</style>
 	
 </head>
 <body>
@@ -21,6 +26,8 @@
             for your special occasion.</p>
 
             <h2>Order Confirmation</h2>
+
+            <p><a href="product_list.php">Continue Shopping</a></p>
 
 		</div>
 	</div>

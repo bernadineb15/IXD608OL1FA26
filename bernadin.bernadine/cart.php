@@ -1,10 +1,27 @@
-<!DOCTYPE html>
+<?php
+
+include_once "lib/php/functions.php";
+include_once "parts/templates.php";
+
+$cart = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id` IN(4,7,10)");
+
+
+
+//print_p($product);
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Cart</title>
 
 	<?php include "parts/meta.php"; ?>
+
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Luckiest+Guy&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Luckiest+Guy&family=Satisfy&family=Tangerine:wght@400;700&display=swap');
+</style>
 	
 </head>
 <body>
@@ -15,20 +32,30 @@
 		<div class="card soft">
 			<h1>Your Shopping Cart</h1>
 
-			<p>Review your invitation before checkout</p>
-			
-			<div class="cart-item">
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-6">
+					<div class="card soft">
+						<?= array_reduce($cart,'cartListTemplate') ?>
+					</div>
+				</div>
 
-                <h2>Wedding Invitation</h2>
-
-                <p>Price: $25.00</p>
-
-                <p>Quantity: 1</p>
-
-             	<hr>
-
-            	<p>Subtotal: $25.00</p>
-
+				<div class="col-xs-12 col-md-6">
+					<div class="card soft flat">
+						<div class="card-section display-flex">
+							<div class="flex-stretch"><strong>Subtotal</strong></div>
+							<div class="flex-none">&dollar;8.75</div>
+						</div>
+						<div class="card-section display-flex">
+							<div class="flex-stretch"><strong>Taxes</strong></div>
+							<div class="flex-none">&dollar;1.50</div>
+						</div>
+						<div class="card-section display-flex">
+							<div class="flex-stretch"><strong>Total</strong></div>
+							<div class="flex-none">&dollar;10.25</div>
+						</div>
+					</div>
+				</div>
+			</div>
             	<a href="product_list.php">Continue Shopping</a>
 
             	<a href="checkout.php">Proceed to Checkout</a>
