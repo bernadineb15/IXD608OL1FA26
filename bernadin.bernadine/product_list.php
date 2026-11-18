@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include_once "lib/php/functions.php";
+include_once "parts/templates.php";
+
+
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -21,9 +32,6 @@
 
 			<?php
 
-			include_once "lib/php/functions.php";
-			include_once "parts/templates.php";
-
 			$result = makeQuery(
 				makeConn(), 
 				"
@@ -34,7 +42,8 @@
 				"
 			);
 
-			echo "<div class='productlist grid gap'>",array_reduce($result, 'productListTemplate'), "</div>";
+
+			echo "<div class='productlist grid gap'>",array_reduce($result, 'productListTemplate', ""), "</div>";
 
 
 

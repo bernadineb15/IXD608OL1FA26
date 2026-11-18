@@ -3,9 +3,11 @@
 include_once "lib/php/functions.php";
 include_once "parts/templates.php";
 
-$cart = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id` IN(4,7,10)");
+//$cart = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id` IN(4,7,10)");
 
+//$cart_product = cartItemById($_GET['id']);
 
+$cart_items = getCartItems();
 
 //print_p($product);
 
@@ -35,36 +37,23 @@ $cart = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id` IN(4,7,10)");
 			<div class="grid gap">
 				<div class="col-xs-12 col-md-6">
 					<div class="card soft">
-						<?= array_reduce($cart,'cartListTemplate') ?>
+						<?= array_reduce($cart_items,'cartListTemplate') ?>
 					</div>
 				</div>
 
 				<div class="col-xs-12 col-md-6">
 					<div class="card soft flat">
-						<div class="card-section display-flex">
-							<div class="flex-stretch"><strong>Subtotal</strong></div>
-							<div class="flex-none">&dollar;8.75</div>
-						</div>
-						<div class="card-section display-flex">
-							<div class="flex-stretch"><strong>Taxes</strong></div>
-							<div class="flex-none">&dollar;1.50</div>
-						</div>
-						<div class="card-section display-flex">
-							<div class="flex-stretch"><strong>Total</strong></div>
-							<div class="flex-none">&dollar;10.25</div>
-						</div>
+						<?= cartTotals() ?>
 					</div>
 				</div>
+				</div>
+            		<a href="product_list.php">Continue Shopping</a>
+
+            		<a href="checkout.php">Proceed to Checkout</a>
+           		 </div>
+
 			</div>
-            	<a href="product_list.php">Continue Shopping</a>
-
-            	<a href="checkout.php">Proceed to Checkout</a>
-
-
-            </div>
-
 		</div>
-	</div>
 	
 </body>
 </html>

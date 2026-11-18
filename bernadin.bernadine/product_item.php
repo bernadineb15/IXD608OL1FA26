@@ -33,6 +33,8 @@ $image_elements = array_reduce($images, function($r, $o) {
     return $r . "<img src='img/$image' alt='Product image'>";
 }, "");
 
+
+//print_p($product);
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +86,8 @@ $image_elements = array_reduce($images, function($r, $o) {
 
             <div class="col-7">
 
-                <div class="card soft flat">
+                <form class="card soft flat" method="post" action="cart_actions.php?action=add-to-cart">
+                  <input type="hidden" name="product-id" value="<?= $product->id ?>">
 
                     <div class="card-section">
 
@@ -103,39 +106,34 @@ $image_elements = array_reduce($images, function($r, $o) {
                     </div>
                     <div class="card-section">
 
-                        <form action="cart.php" method="GET">
+                    <h3>Event Details</h3>
 
-                            <input
-                                type="hidden"
-                                name="id"
-                                value="<?= $product->id ?>"
-                            >
+                     <label for="event-name">Name(s)</label>
+                     <input type="text" name="event-name" id="event-name"
+                        class="form-input" placeholder="Names on invitation" required>
 
-                            <label for="product-amount" class="form-label">
-                                Quantity
-                            </label>
+                    <label for="event-address">Event Address</label>
+                     <input type="text" name="event-address" id="event-address"
+                     class="form-input" placeholder="Event location" required>
 
-                            <select
-                                name="quantity"
-                                id="product-amount"
-                                class="form-select"
-                            >
-                                <?php for ($i = 1; $i <= 10; $i++): ?>
-                                    <option value="<?= $i ?>">
-                                        <?= $i ?>
-                                    </option>
-                                <?php endfor; ?>
-                            </select>
+                    <label for="event-date">Event Date</label>
+                    <input type="date" name="event-date" id="event-date"
+                    class="form-input" required>
 
-                            <button type="submit" class="form-button">
-                                Add to Cart
-                            </button>
+                    <label for="product-amount" class="form-label">Quantity</label>
+                     <select name="product-amount" id="product-amount" class="form-select">
+                     <?php for ($i = 1; $i <= 10; $i++): ?>
+                     <option value="<?= $i ?>"><?= $i ?></option>
+                    <?php endfor; ?>
+                    </select>
 
-                        </form>
+                      <button type="submit" class="form-button">
+                         Add to Cart
+                    </button>
 
                     </div>
 
-                </div>
+                </form>
 
                 <a href="product_list.php">
                     Back to Product List

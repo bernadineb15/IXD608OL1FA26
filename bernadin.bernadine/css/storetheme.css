@@ -78,14 +78,22 @@ body {
 .productlist {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
+    gap: 20px;
+}
+
+
+.productlist > a {
+    width: 100%;
+    max-width: 100%;
 }
 
 .productlist img {
     width: 100%;
-    height: 280px;
-    object-fit: cover;
+    max-width: 220px;
+    height: 200px;
+    object-fit: contain;
     display: block;
+    margin: auto;
 }
 
 .productlist .card {
@@ -139,7 +147,25 @@ body {
     object-fit: contain;
 }
 
+.productlist .figure.product {
+    height: 220px;
+}
 
+.productlist .figure.product .flex-stretch {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.productlist .figure.product .flex-stretch img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
 
 
 
