@@ -7,7 +7,7 @@ function productListTemplate($r,$o) {
 	return $r.<<<HTML
 
 
-		<a class="col-4" href="product_item.php?id=$o->id">
+		<a href="product_item.php?id=$o->id">
 			<div class="card soft">
 				<figure class="figure product display-flex flex-column">
 					<div class="flex-stretch">
@@ -37,6 +37,9 @@ function selectAmount($amount=1,$total=10) {
 function cartListTemplate($r,$o){
 $totalfixed = number_format($o->total,2,'.','');
 $selectamount = selectAmount($o->amount,10);
+$eventName = htmlspecialchars($o->eventName ?? '', ENT_QUOTES, 'UTF-8');
+$eventAddress = htmlspecialchars($o->eventAddress ?? '', ENT_QUOTES, 'UTF-8');
+$eventDate = htmlspecialchars($o->eventDate ?? '', ENT_QUOTES, 'UTF-8');
 return $r.<<<HTML
 <div class="display-flex">
 	<div class="flex-none images-thumbs">
@@ -44,6 +47,11 @@ return $r.<<<HTML
 	</div>
 	<div class="flex-stretch">
 		<strong>$o->name</strong>
+		<div class="event-details">
+    		<p><strong>Event Name:</strong> $eventName</p>
+    		<p><strong>Event Address:</strong> $eventAddress</p>
+   			<p><strong>Event Date:</strong> $eventDate</p>
+		</div>
 		<form action="cart_actions.php?action=delete-cart-item" method="post">
 			<input type="hidden" name="id" value="$o->id">
 			<input type="submit" class="form-button inline" value="Remove" style="font-size:0.8em">

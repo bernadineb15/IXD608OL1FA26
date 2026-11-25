@@ -65,7 +65,7 @@ $image_elements = array_reduce($images, function($r, $o) {
 
         <div class="grid gap">
 
-            <div class="col-xs-12 col-md-7">
+            <div class="col-md-9">
 
                 <div class="images-main">
 
@@ -84,7 +84,7 @@ $image_elements = array_reduce($images, function($r, $o) {
 
             </div>
 
-            <div class="col-7">
+            <div class="col-11">
 
                 <form class="card soft flat" method="post" action="cart_actions.php?action=add-to-cart">
                   <input type="hidden" name="product-id" value="<?= $product->id ?>">

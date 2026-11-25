@@ -50,23 +50,34 @@ function getCart() {
 	return isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 }
 
-function addToCart($id, $amount) {
-	if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
-	//$_SESSION['cart'] = [];
-	$cart = getCart();
 
-	$p = array_find($cart,function($o) use($id) {return $o->id==$id; });
+function addToCart($id, $amount, $eventName, $eventAddress, $eventDate) {
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = [];
+    }
 
-	if($p) {
-		$p->amount += $amount;
-	} else {
-	$_SESSION['cart'][]=(object)[
-		"id"=>$id,
-		"amount"=>$amount
+    $cart = getCart();
 
-		];
-	}
+    $p = array_find($cart, function($o) use ($id) {
+        return $o->id == $id;
+    });
+
+    if ($p) {
+        $p->amount += $amount;
+        $p->eventName = $eventName;
+        $p->eventAddress = $eventAddress;
+        $p->eventDate = $eventDate;
+    } else {
+        $_SESSION['cart'][] = (object)[
+            "id" => $id,
+            "amount" => $amount,
+            "eventName" => $eventName,
+            "eventAddress" => $eventAddress,
+            "eventDate" => $eventDate
+        ];
+    }
 }
+
 function resetCart() {$_SESSION['cart'] = [];}
 
 function cartItemById($id) {
@@ -97,6 +108,9 @@ function getCartItems() {
 	return array_map(function($o) use ($cart) {
 		$p = cartItemById($o->id);
 		$o->amount = $p->amount;
+		$o->eventName = $p->eventName ?? '';
+		$o->eventAddress = $p->eventAddress ?? '';
+		$o->eventDate = $p->eventDate ?? '';
 		$o->total = $p->amount * $o->price;
 		return $o;
 	},$data);
